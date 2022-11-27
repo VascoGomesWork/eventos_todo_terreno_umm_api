@@ -14,9 +14,10 @@ class ComentariosEventosController extends Controller
     public function store(Request $request){
 
         $request->validate([
-            'nome' => 'required',
-            'email' => 'required',
-            'password' => 'required'
+            'comentario' => 'required',
+            'id_evento_fk' => 'required',
+            'id_participante_fk' => 'required',
+            'id_organizador_fk' => 'required'
         ]);
 
         return ComentariosEventos::create($request->all());

@@ -14,9 +14,10 @@ class ParticipanteInscreveEventosController extends Controller
     public function store(Request $request){
 
         $request->validate([
-            'nome' => 'required',
-            'email' => 'required',
-            'password' => 'required'
+            'matricula_umm' => 'required',
+            'num_acompanhantes' => 'required',
+            'id_participante_fk' => 'required',
+            'id_evento_fk' => 'required'
         ]);
 
         return ParticipanteInscreveEventos::create($request->all());

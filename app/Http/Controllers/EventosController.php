@@ -15,8 +15,13 @@ class EventosController extends Controller
 
         $request->validate([
             'nome' => 'required',
-            'email' => 'required',
-            'password' => 'required'
+            'imagem' => 'required',
+            'localidade_inicio' => 'required',
+            'pontos_passagem' => 'required',
+            'localidade_fim' => 'required',
+            'requisitos' => 'required',
+            'descricao' => 'required',
+            'id_organizador_fk' => 'required'
         ]);
 
         return Eventos::create($request->all());
