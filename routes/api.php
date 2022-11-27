@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ComentariosEventosController;
 use App\Http\Controllers\EventosController;
 use App\Http\Controllers\OrganizadorController;
@@ -22,15 +23,14 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+//https://youtu.be/MT-GJQIY3EU: Consultado a 27/11/2022
+//Protected Routes
+Route::group(['middleware' => ['auth:sanctum']], function (){
+    Route::post('/eventos/store', [EventosController::class, 'store']);
+});
 
-/*Route::post('/organizador/store', function (){
-    return \App\Models\Organizador::create([
-        'nome' => 'Diogo Andre',
-        'email' => 'diogoandre@gmail.com',
-        'password' => 'admin123',
-        'updated_at' => '27/11/2022'
-    ]);
-});*/
+//Registo e Login
+Route::post('/registar', [AuthController::class, 'registar_participante']);
 
 Route::post('/participante/store', [ParticipanteController::class, 'store']);
 Route::get('/participante/show/{id}', [ParticipanteController::class, 'show']);
@@ -39,7 +39,7 @@ Route::post('/organizador/store', [OrganizadorController::class, 'show']);
 Route::get('/organizador/show/{id}', [OrganizadorController::class, 'show']);
 
 Route::get('/eventos', [EventosController::class, 'index']);
-Route::post('/eventos/store', [EventosController::class, 'store']);
+//Route::post('/eventos/store', [EventosController::class, 'store']);
 Route::get('/eventos/show/{id}', [EventosController::class, 'show']);
 
 Route::get('/inscrever_eventos', [ParticipanteInscreveEventosController::class, 'index']);

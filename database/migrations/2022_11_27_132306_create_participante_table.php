@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('email', 900);
             $table->string('telefone', 9)->nullable();
             $table->string('local_residencia', 1000)->nullable();
-            $table->string('password', 50);
+            $table->string('password', 1000);
         });
     }
 
