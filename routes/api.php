@@ -35,15 +35,15 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('/participante/store', [ParticipanteController::class, 'store']);
 Route::get('/participante/show/{id}', [ParticipanteController::class, 'show']);
 
-Route::get('/organizador/store', [OrganizadorController::class, 'show']);
+Route::post('/organizador/store', [OrganizadorController::class, 'show']);
 Route::get('/organizador/show/{id}', [OrganizadorController::class, 'show']);
 
 Route::get('/eventos', [EventosController::class, 'index']);
-Route::get('/eventos/store', [EventosController::class, 'store']);
+Route::post('/eventos/store', [EventosController::class, 'store']);
 Route::get('/eventos/show/{id}', [EventosController::class, 'show']);
 
 Route::get('/inscrever_eventos', [ParticipanteInscreveEventosController::class, 'index']);
-Route::get('/inscrever_eventos/store', [ParticipanteInscreveEventosController::class, 'store']);
+Route::post('/inscrever_eventos/store', [ParticipanteInscreveEventosController::class, 'store']);
 Route::get('/inscrever_eventos/show/{id}', [ParticipanteInscreveEventosController::class, 'show']);
 
 Route::get('/comentarios_evento', [ComentariosEventosController::class, 'index']);
