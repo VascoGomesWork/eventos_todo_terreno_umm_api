@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('comentario', 1000);
             $table->integer('id_evento_fk');
             $table->integer('id_participante_fk');
-            $table->integer('id_organizado');
+            $table->integer('id_organizador_fk');
         });
     }
 

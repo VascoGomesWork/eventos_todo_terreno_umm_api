@@ -47,5 +47,5 @@ Route::post('/inscrever_eventos/store', [ParticipanteInscreveEventosController::
 Route::get('/inscrever_eventos/show/{id}', [ParticipanteInscreveEventosController::class, 'show']);
 
 Route::get('/comentarios_evento', [ComentariosEventosController::class, 'index']);
-Route::get('/comentarios_evento/store', [ComentariosEventosController::class, 'store']);
+Route::post('/comentarios_evento/store', [ComentariosEventosController::class, 'store']);
 Route::get('/comentarios_evento/show/{id}', [ComentariosEventosController::class, 'show']);
