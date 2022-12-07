@@ -20,4 +20,8 @@ class Eventos extends Model
         'descricao',
         'id_organizador_fk'
     ];
+
+    public function organizador(){
+        return $this->belongsTo(Organizador::class);
+    }
 }

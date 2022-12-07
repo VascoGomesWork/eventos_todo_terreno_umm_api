@@ -39,4 +39,9 @@ class Organizador extends User
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    //How to make connection between 2 tables - https://stackoverflow.com/questions/36762802/laravel-how-to-make-a-relationship-between-two-table-that-has-a-reference-table
+    public function eventos(){
+        return $this->belongsToMany(Eventos::class, 'id_organizador_fk', 'id');
+    }
 }
