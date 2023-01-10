@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('localidade_fim', 500);
             $table->string('requisitos', 500);
             $table->string('descricao', 900);
+            $table->string('data_evento', 10);
             $table->integer('id_organizador_fk');
         });
     }

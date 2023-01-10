@@ -22,6 +22,7 @@ class EventosController extends Controller
             'localidade_fim' => 'required',
             'requisitos' => 'required',
             'descricao' => 'required',
+            'data_evento' => 'required',
             'id_organizador_fk' => 'required'
         ]);
 
@@ -29,6 +30,7 @@ class EventosController extends Controller
     }
 
     public function show($id){
+        //TODO - SHOW ALL DATA RELATIVE TO A SPECIFIC EVENT
         return Eventos::find($id);
     }
 }
