@@ -32,7 +32,7 @@ Route::group(['middleware' => ['auth:sanctum']], function (){
 
 //Registo e Login
 Route::post('/registar', [AuthController::class, 'registar_participante']);
-Route::post('/login', [AuthController::class, 'login_participante']);
+Route::post('/login', [AuthController::class, 'login']);
 
 Route::post('/participante/store', [ParticipanteController::class, 'store']);
 Route::get('/participante/show/{id}', [ParticipanteController::class, 'show']);

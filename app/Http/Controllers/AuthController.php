@@ -34,24 +34,47 @@ class AuthController extends Controller
         return response($response, 201);
     }
 
-    public function login_participante(Request $request){
+    public function login(Request $request){
         $fields = $request->validate([
             'email' => 'required',
             'password' => 'required'
         ]);
 
-        //Checks Email
+        $user = "";
+        $type = "";
+
+        //Checks Participante
+        //Checks Participante Email
         $participante = Participante::where('email', $fields['email'])->first();
 
-        //Checks Password
+        //Checks Participante Password
         if(!$participante || !Hash::check($fields['password'], $participante->password)){
             return response(['message' => 'Bad Credentials', 401]);
         }
-
         $token = $participante->createToken('MeuToken')->plainTextToken;
+        if($token != null){
+            $user = $participante;
+            $type = "participante";
+        }
+        else {
+
+            //Checks Organizador
+            //Checks Organizador Email
+            $organizador = Organizador::where('email', $fields['email'])->first();
+
+            //Checks Participante Password
+            if (!$organizador || !Hash::check($fields['password'], $organizador->password)) {
+                return response(['message' => 'Bad Credentials', 401]);
+            }
+
+            $token = $organizador->createToken('MeuToken')->plainTextToken;
+            $user = $organizador;
+            $type = "organizador";
+        }
 
         $response = [
-            'participante' => $participante,
+            'user' => $user,
+            'type' => $type,
             'token' => $token
         ];
 
