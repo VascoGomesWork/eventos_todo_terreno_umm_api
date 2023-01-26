@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id()->unique()->autoIncrement();
             $table->string('nome', 500);
             $table->string('email', 900);
-            $table->string('password', 50);
+            $table->string('password', 1000);
         });
     }
 
