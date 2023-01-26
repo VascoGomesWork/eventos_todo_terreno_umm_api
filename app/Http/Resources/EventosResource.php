@@ -18,6 +18,8 @@ class EventosResource extends JsonResource
             'id' => $this->id,
             'nome' => $this->nome,
             'imagem' => $this->imagem,
+            'data_inicio' => $this->data_inicio,
+            'data_fim' => $this->data_fim,
             'localidade_inicio' => $this->localidade_inicio,
             'pergunta_evento' => $this->pergunta_evento,
             'resposta_evento' => $this->resposta_evento,

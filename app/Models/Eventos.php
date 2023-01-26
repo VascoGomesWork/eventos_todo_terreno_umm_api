@@ -13,6 +13,8 @@ class Eventos extends Model
     protected $fillable = [
         'nome',
         'imagem',
+        'data_inicio',
+        'data_fim',
         'localidade_inicio',
         'pergunta_evento',
         'resposta_evento',

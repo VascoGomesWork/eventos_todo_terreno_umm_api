@@ -18,7 +18,10 @@ class ParticipanteResource extends JsonResource
             'id' => $this->id,
             'nome' => $this->nome,
             'email' => $this->email,
-            'telefone' => $this->telefone,
+            'pergunta_participante_1' => $this->pergunta_participante_1,
+            'resposta_participante_1' => $this->resposta_participante_1,
+            'pergunta_participante_2' => $this->pergunta_participante_2,
+            'resposta_participante_2' => $this->resposta_participante_2,
             'local_residencia' => $this->local_residencia,
             'password' => $this->password
         ];

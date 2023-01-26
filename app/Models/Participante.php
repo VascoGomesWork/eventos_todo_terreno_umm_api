@@ -20,6 +20,10 @@ class Participante extends User
     protected $fillable = [
         'nome',
         'email',
+        'pergunta_participante_1',
+        'resposta_participante_1',
+        'pergunta_participante_2',
+        'resposta_participante_2',
         'password',
     ];
     /**

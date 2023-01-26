@@ -18,6 +18,8 @@ class EventosController extends Controller
         $request->validate([
             'nome' => 'required',
             'imagem' => 'required',
+            'data_inicio' => 'required',
+            'data_fim' => 'required',
             'localidade_inicio' => 'required',
             'pergunta_evento' => 'required',
             'resposta_evento' => 'nullable',

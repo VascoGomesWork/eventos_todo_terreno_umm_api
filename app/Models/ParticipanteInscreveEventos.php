@@ -12,8 +12,10 @@ class ParticipanteInscreveEventos extends Model
     public $timestamps = false;
     protected $fillable = [
         'id',
-        'matricula_umm',
-        'num_acompanhantes',
+        'pergunta_inscricao_evento_1',
+        'resposta_inscricao_evento_1',
+        'pergunta_inscricao_evento_2',
+        'resposta_inscricao_evento_2',
         'id_participante_fk',
         'id_evento_fk'
     ];

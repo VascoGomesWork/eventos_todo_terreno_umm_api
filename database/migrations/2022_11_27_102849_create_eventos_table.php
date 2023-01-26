@@ -17,6 +17,8 @@ return new class extends Migration
             $table->id()->unique()->autoIncrement();
             $table->string('nome', 500);
             $table->string('imagem', 900);
+            $table->string('data_inicio', 500);
+            $table->string('data_fim', 500);
             $table->string('localidade_inicio', 500);
             $table->string('pergunta_evento', 1000);
             $table->string('resposta_evento', 1000);
