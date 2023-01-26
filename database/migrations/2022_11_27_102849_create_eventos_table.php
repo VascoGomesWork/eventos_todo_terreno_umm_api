@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('data_fim', 500);
             $table->string('localidade_inicio', 500);
             $table->string('pergunta_evento', 1000);
-            $table->string('resposta_evento', 1000);
+            $table->string('resposta_evento', 1000)->nullable();
             $table->string('localidade_fim', 500);
             $table->string('requisitos', 500);
             $table->string('descricao', 900);
