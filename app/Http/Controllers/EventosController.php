@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Eventos;
 use App\Models\Organizador;
+use App\Models\Participante;
+use App\Models\ParticipanteInscreveEventos;
 use Illuminate\Http\Request;
 
 class EventosController extends Controller
@@ -21,15 +23,18 @@ class EventosController extends Controller
             'data_inicio' => 'required',
             'data_fim' => 'required',
             'localidade_inicio' => 'required',
-            'pergunta_evento' => 'required',
-            'resposta_evento' => 'nullable',
+            'pergunta_evento_1' => 'required',
+            'pergunta_evento_2' => 'required',
+            'pergunta_evento_3' => 'required',
+            'pergunta_participante_1' => 'required',
+            'pergunta_participante_2' => 'required',
             'localidade_fim' => 'required',
             'requisitos' => 'required',
             'descricao' => 'required',
             'id_organizador_fk' => 'required'
         ]);
 
-        return Eventos::create($request->all());
+        return Eventos::create($request);
     }
 
     public function show($id){

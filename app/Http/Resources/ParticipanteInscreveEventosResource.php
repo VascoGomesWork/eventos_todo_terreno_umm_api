@@ -16,10 +16,11 @@ class ParticipanteInscreveEventosResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'pergunta_inscricao_evento_1' => $this->pergunta_inscricao_evento_1,
-            'resposta_inscricao_evento_1' => $this->resposta_inscricao_evento_1,
-            'pergunta_inscricao_evento_2' => $this->pergunta_inscricao_evento_2,
-            'resposta_inscricao_evento_2' => $this->resposta_inscricao_evento_2,
+            'resposta_evento_1' => $this->resposta_evento_1,
+            'resposta_evento_2' => $this->resposta_evento_2,
+            'resposta_evento_3' => $this->resposta_evento_3,
+            'resposta_participante_1' => $this->resposta_participante_1,
+            'resposta_participante_2' => $this->resposta_participante_2,
             'id_participante_fk' => $this->id_participante_fk,
             'id_evento_fk' => $this->id_evento_fk
         ];

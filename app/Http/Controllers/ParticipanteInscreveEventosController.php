@@ -14,10 +14,11 @@ class ParticipanteInscreveEventosController extends Controller
     public function store(Request $request){
 
         $request->validate([
-            'pergunta_inscricao_evento_1' => 'required',
-            'resposta_inscricao_evento_1' => 'nullable',
-            'pergunta_inscricao_evento_2' => 'required',
-            'resposta_inscricao_evento_2' => 'nullable',
+            'resposta_evento_1' => 'required',
+            'resposta_evento_2' => 'required',
+            'resposta_evento_3' => 'required',
+            'resposta_participante_1' => 'required',
+            'resposta_participante_2' => 'required',
             'id_participante_fk' => 'required',
             'id_evento_fk' => 'required'
         ]);
