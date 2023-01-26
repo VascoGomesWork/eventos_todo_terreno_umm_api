@@ -14,11 +14,13 @@ class EventosController extends Controller
 
     public function store(Request $request){
 
+        //Not Required -> https://stackoverflow.com/questions/46790048/laravel-do-not-validate-if-field-is-not-required
         $request->validate([
             'nome' => 'required',
             'imagem' => 'required',
             'localidade_inicio' => 'required',
-            'pontos_passagem' => 'required',
+            'pergunta_evento' => 'required',
+            'resposta_evento' => 'nullable',
             'localidade_fim' => 'required',
             'requisitos' => 'required',
             'descricao' => 'required',
