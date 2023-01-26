@@ -19,7 +19,6 @@ return new class extends Migration
             $table->string('resposta_inscricao_evento_1', 1000)->nullable();
             $table->string('pergunta_inscricao_evento_2', 1000);
             $table->string('resposta_inscricao_evento_2', 1000)->nullable();
-            $table->integer('num_acompanhantes');
             $table->integer('id_participante_fk');
             $table->integer('id_evento_fk');
         });
