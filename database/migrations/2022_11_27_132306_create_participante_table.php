@@ -21,7 +21,6 @@ return new class extends Migration
             $table->string('resposta_participante_1', 1000)->nullable();
             $table->string('pergunta_participante_2', 1000)->nullable();
             $table->string('resposta_participante_2', 1000)->nullable();
-            $table->string('local_residencia', 1000)->nullable();
             $table->string('password', 1000);
         });
     }
