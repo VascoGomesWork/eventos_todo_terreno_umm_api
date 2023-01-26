@@ -17,7 +17,10 @@ return new class extends Migration
             $table->id()->unique()->autoIncrement();
             $table->string('nome', 500);
             $table->string('email', 900);
-            $table->string('telefone', 9)->nullable();
+            $table->string('pergunta_participante_1', 1000);
+            $table->string('resposta_participante_1', 1000)->nullable();
+            $table->string('pergunta_participante_2', 1000);
+            $table->string('resposta_participante_2', 1000)->nullable();
             $table->string('local_residencia', 1000)->nullable();
             $table->string('password', 1000);
         });
