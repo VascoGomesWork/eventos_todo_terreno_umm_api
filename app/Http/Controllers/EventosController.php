@@ -26,7 +26,6 @@ class EventosController extends Controller
             'localidade_fim' => 'required',
             'requisitos' => 'required',
             'descricao' => 'required',
-            'data_evento' => 'required',
             'id_organizador_fk' => 'required'
         ]);
 
