@@ -34,7 +34,7 @@ class EventosController extends Controller
             'id_organizador_fk' => 'required'
         ]);
 
-        return Eventos::create($request);
+        return Eventos::create($request->all());
     }
 
     public function show($id){
