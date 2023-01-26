@@ -12,9 +12,9 @@ class ParticipanteController extends Controller
         $request->validate([
             'nome' => 'required',
             'email' => 'required',
-            'pergunta_participante_1' => 'nullable',
+            'pergunta_participante_1' => 'required',
             'resposta_participante_1' => 'nullable',
-            'pergunta_participante_2' => 'nullable',
+            'pergunta_participante_2' => 'required',
             'resposta_participante_2' => 'nullable',
             'password' => 'required'
         ]);
