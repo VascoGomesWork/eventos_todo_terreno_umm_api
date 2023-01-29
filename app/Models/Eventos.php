@@ -28,6 +28,12 @@ class Eventos extends Model
     ];
 
     public function organizador(){
+        //Eloquent Relationships -> https://laravel.com/docs/9.x/eloquent-relationships
         return $this->belongsTo(Organizador::class);
+    }
+
+    public function comentariosEventos(){
+        //Eloquent Relationships -> https://laravel.com/docs/9.x/eloquent-relationships
+        return $this->hasMany(ComentariosEventos::class, 'id_evento_fk');
     }
 }

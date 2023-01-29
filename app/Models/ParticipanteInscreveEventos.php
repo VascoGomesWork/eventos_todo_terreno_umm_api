@@ -20,4 +20,12 @@ class ParticipanteInscreveEventos extends Model
         'id_participante_fk',
         'id_evento_fk'
     ];
+
+    public function eventos(){
+        return $this->belongsTo(Eventos::class);
+    }
+
+    public function participante(){
+        return $this->belongsTo(Participante::class);
+    }
 }

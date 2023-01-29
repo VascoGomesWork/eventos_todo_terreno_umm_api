@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use App\Models\Eventos;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class EventosResource extends JsonResource
@@ -14,6 +15,7 @@ class EventosResource extends JsonResource
      */
     public function toArray($request)
     {
+
         return [
             'id' => $this->id,
             'nome' => $this->nome,
@@ -29,7 +31,7 @@ class EventosResource extends JsonResource
             'localidade_fim' => $this->localidade_fim,
             'requisitos' => $this->requisitos,
             'descricao' => $this->descricao,
-            'id_organizador_fk' => $this->id_organizador_fk
+            'id_organizador_fk' => $this->id_organizador_fk,
         ];
     }
 }

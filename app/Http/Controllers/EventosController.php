@@ -38,7 +38,20 @@ class EventosController extends Controller
     }
 
     public function show($id){
-        //TODO - SHOW ALL DATA RELATIVE TO A SPECIFIC EVENT
-        return Eventos::find($id);
+        //Eloquent Relationships -> https://laravel.com/docs/9.x/eloquent-relationships
+
+        //Creates New Array That Contains All Data
+        $eventoFinal = array();
+
+        //Pushes the Evento Especefico Data to eventoFinal Array
+        array_push($eventoFinal, Eventos::find($id));
+
+        //Loops Through All the Comments
+        foreach (Eventos::find($id)->comentariosEventos as $comentarioEvento){
+            //Pushes the Comentario Especifico to the Evento into the Array
+            array_push($eventoFinal, $comentarioEvento);
+        }
+        //Returns Evento Final
+        return $eventoFinal;
     }
 }
