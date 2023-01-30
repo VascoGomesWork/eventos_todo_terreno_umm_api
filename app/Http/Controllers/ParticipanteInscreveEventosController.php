@@ -20,10 +20,18 @@ class ParticipanteInscreveEventosController extends Controller
             'resposta_participante_1' => 'required',
             'resposta_participante_2' => 'required',
             'id_participante_fk' => 'required',
-            'id_evento_fk' => 'required'
+            'id_evento_fk' => 'required',
+            'comentario' => 'required',
+            'id_organizador_fk' => 'required'
         ]);
 
-        return ParticipanteInscreveEventos::create($request->all());
+        //Inscreve o Participante Primeiro no Evento
+        $participante_Inscreve_Evento = ParticipanteInscreveEventos::create($request->all());
+        //De seguida Regista o comentário do mesmo acerca do evento
+        //TODO - FIX
+        ComentariosEventosController::store([$request->comentario, $request->id_evento_fk, $request->id_participante_fk, $request->id_organizador_fk]);
+
+        return $participante_Inscreve_Evento;
     }
 
     public function show($id){
