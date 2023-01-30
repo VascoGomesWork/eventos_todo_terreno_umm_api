@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ComentariosEventos;
 use App\Models\ParticipanteInscreveEventos;
 use Illuminate\Http\Request;
 
@@ -28,8 +29,19 @@ class ParticipanteInscreveEventosController extends Controller
         //Inscreve o Participante Primeiro no Evento
         $participante_Inscreve_Evento = ParticipanteInscreveEventos::create($request->all());
         //De seguida Regista o comentário do mesmo acerca do evento
-        //TODO - FIX
-        ComentariosEventosController::store([$request->comentario, $request->id_evento_fk, $request->id_participante_fk, $request->id_organizador_fk]);
+
+        //https://laracasts.com/discuss/channels/laravel/non-static-method-appmodelsemployeegetemployeename-should-not-be-called-statically-assuming-this-from-incompatible-context
+        //É criada uma nova instância do controlador ComentariosEventos
+        $comentario = new ComentariosEventosController();
+        //É feita a validação dos campos
+        $comentariosRequest = $request->validate([
+            'comentario' => 'required',
+            'id_evento_fk' => 'required',
+            'id_participante_fk' => 'required',
+            'id_organizador_fk' => 'required'
+        ]);
+        //O Comentário é criado
+        ComentariosEventos::create($comentariosRequest);
 
         return $participante_Inscreve_Evento;
     }

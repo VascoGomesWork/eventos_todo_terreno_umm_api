@@ -28,4 +28,8 @@ class ParticipanteInscreveEventos extends Model
     public function participante(){
         return $this->belongsTo(Participante::class);
     }
+
+    public function comentariosEventos(){
+        return $this->hasMany(ComentariosEventos::class);
+    }
 }
