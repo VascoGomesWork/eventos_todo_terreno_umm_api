@@ -52,6 +52,8 @@ Route::get('/eventos/show/{id}', [EventosController::class, 'show']);
 //Ver Todos os Eventos Inscritos e Visualizar Evento Inscrito Especifico
 Route::get('/inscrever_eventos', [ParticipanteInscreveEventosController::class, 'index']);
 Route::get('/inscrever_eventos/show/{id}', [ParticipanteInscreveEventosController::class, 'show']);
+Route::get('/inscrever_eventos/count/{id}', [ParticipanteInscreveEventosController::class, 'count']);
+Route::get('/inscrever_eventos/countOrganizador/{id}', [ParticipanteInscreveEventosController::class, 'countOrganizador']);
 
 //Ver Todos os Comentarios e Visualizar Comentario Especifico
 Route::get('/comentarios_evento', [ComentariosEventosController::class, 'index']);
