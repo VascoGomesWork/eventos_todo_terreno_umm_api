@@ -54,9 +54,4 @@ class ParticipanteInscreveEventosController extends Controller
         //https://stackoverflow.com/questions/33676576/eloquent-laravel-how-to-get-a-row-count-from-a-get
         return ParticipanteInscreveEventos::where('id_participante_fk', '<=', $id)->count();
     }
-
-    public function countOrganizador($id){
-        //https://stackoverflow.com/questions/33676576/eloquent-laravel-how-to-get-a-row-count-from-a-get
-        return ParticipanteInscreveEventos::where('id_organizador_fk', '<=', $id)->count();
-    }
 }
