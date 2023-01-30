@@ -26,7 +26,7 @@ class ParticipanteInscreveEventos extends Model
     }
 
     public function participante(){
-        return $this->belongsTo(Participante::class);
+        return $this->hasMany(Participante::class);
     }
 
     public function comentariosEventos(){
