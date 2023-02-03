@@ -43,6 +43,12 @@ class ParticipanteInscreveEventosController extends Controller
         //O Comentário é criado
         ComentariosEventos::create($comentariosRequest);
 
+        /*$comentarios_eventos = new ComentariosEventosController();
+        echo $request['comentario'];
+        $newRequest = new Request();
+        $comentarios_eventos->$this->store($newRequest->replace(['comentario' => $request['comentario'], 'id_evento_fk' => $request['id_evento_fk'], 'id_participante_fk' => $request['id_participante_fk'], 'id_organizador_fk' => $request['id_organizador_fk']]));
+*/
+
         return $participante_Inscreve_Evento;
     }
 
