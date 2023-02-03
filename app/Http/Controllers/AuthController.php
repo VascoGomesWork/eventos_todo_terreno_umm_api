@@ -82,11 +82,6 @@ class AuthController extends Controller
         } else {
 
             $organizador = Organizador::where('email', $fields['email'])->first();
-            //echo 'Organizador = ' . $organizador;
-            //echo 'Password Filed = ' . $fields['password'];
-            //echo 'Organizador Password = ' . $organizador->password;
-            //echo 'CHECK = ' . Hash::check($fields['password'], $organizador->password);
-            //Checks Participante Password
             if ($organizador != NULL || Hash::check($fields['password'], $organizador->password) != NULL) {
                 //return response(['message' => 'Bad Credentials Organizador', 401]);
                 //echo 'TESTE';

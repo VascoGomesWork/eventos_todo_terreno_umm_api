@@ -38,18 +38,15 @@ Route::post('/registar_organizador', [AuthController::class, 'registar_organizad
 Route::post('/login', [AuthController::class, 'login']);
 
 //Registar Participante e Visualizar Participante Especifico
-Route::post('/participante/store', [ParticipanteController::class, 'store']);
 Route::get('/participante/show/{id}', [ParticipanteController::class, 'show']);
 
 //Registar Organizador e Visualizar Organizador Especifico
-Route::post('/organizador/store', [OrganizadorController::class, 'show']);
 Route::get('/organizador/show/{id}', [OrganizadorController::class, 'show']);
 
 //Ver Todos os Eventos e Visualizar Evento Especifico
 Route::get('/eventos', [EventosController::class, 'index']);
 Route::get('/eventos/show/{id}', [EventosController::class, 'show']);
 Route::get('/eventos/count/{id}', [EventosController::class, 'count']);
-
 
 //Ver Todos os Eventos Inscritos e Visualizar Evento Inscrito Especifico
 Route::get('/inscrever_eventos', [ParticipanteInscreveEventosController::class, 'index']);

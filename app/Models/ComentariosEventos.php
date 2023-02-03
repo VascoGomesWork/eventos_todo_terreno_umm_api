@@ -17,7 +17,4 @@ class ComentariosEventos extends Model
         'id_organizador_fk'
     ];
 
-    /*public function eventos(){
-        return $this->belongsTo(Eventos::class);
-    }*/
 }
